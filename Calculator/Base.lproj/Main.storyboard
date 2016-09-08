@@ -51,6 +51,9 @@
                                 <variation key="widthClass=compact">
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="41"/>
                                 </variation>
+                                <connections>
+                                    <action selector="decimalPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iy1-Hl-Flf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49x-Yx-anv">
                                 <rect key="frame" x="300" y="450" width="150" height="150"/>
@@ -189,7 +192,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53Z-A4-R47">
                                 <rect key="frame" x="300" y="450" width="150" height="150"/>
-                                <color key="backgroundColor" red="0.93333333333333335" green="0.44705882352941179" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="53Z-A4-R47" secondAttribute="height" multiplier="1:1" id="R2g-fe-4gI"/>
                                     <constraint firstAttribute="width" secondItem="53Z-A4-R47" secondAttribute="height" multiplier="1:1" id="mTM-ZC-TdI"/>
@@ -211,33 +214,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="subtractionPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yaY-UB-3Z9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLk-Lx-Dby">
-                                <rect key="frame" x="300" y="450" width="150" height="150"/>
-                                <color key="backgroundColor" red="0.792156862745098" green="0.79607843137254897" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="jLk-Lx-Dby" secondAttribute="height" multiplier="1:1" id="I41-FO-Bew"/>
-                                    <constraint firstAttribute="width" secondItem="jLk-Lx-Dby" secondAttribute="height" multiplier="1:1" id="TL6-r7-dLA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="47"/>
-                                <state key="normal" title="7">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="I41-FO-Bew"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="41"/>
-                                    <mask key="constraints">
-                                        <include reference="I41-FO-Bew"/>
-                                        <exclude reference="TL6-r7-dLA"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="sevenPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WCQ-ls-NrM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgg-96-Wfy">
@@ -269,7 +245,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9If-Tn-C9U">
                                 <rect key="frame" x="300" y="450" width="150" height="150"/>
-                                <color key="backgroundColor" red="0.93333333333333335" green="0.44705882352941179" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9If-Tn-C9U" secondAttribute="height" multiplier="1:1" id="4di-GQ-OrU"/>
                                     <constraint firstAttribute="width" secondItem="9If-Tn-C9U" secondAttribute="height" multiplier="1:1" id="NPj-sc-w8k"/>
@@ -370,7 +346,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tlr-pe-PiV">
                                 <rect key="frame" x="300" y="450" width="150" height="150"/>
-                                <color key="backgroundColor" red="0.93333333333333335" green="0.44705882352941179" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Tlr-pe-PiV" secondAttribute="height" multiplier="1:1" id="l9i-cI-hNX"/>
                                     <constraint firstAttribute="width" secondItem="Tlr-pe-PiV" secondAttribute="height" multiplier="1:1" id="vEW-0K-qal"/>
@@ -424,13 +400,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7F-Bg-v1y">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <color key="backgroundColor" red="0.094117647058823528" green="0.094117647058823528" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="65"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjk-5T-PcE">
                                 <rect key="frame" x="300" y="450" width="150" height="150"/>
-                                <color key="backgroundColor" red="0.93333333333333335" green="0.44705882352941179" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Zjk-5T-PcE" secondAttribute="height" multiplier="1:1" id="Bcf-ML-Lex"/>
                                     <constraint firstAttribute="width" secondItem="Zjk-5T-PcE" secondAttribute="height" multiplier="1:1" id="DwW-yW-UKR"/>
@@ -456,7 +432,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5o9-UK-i9V">
                                 <rect key="frame" x="450" y="450" width="150" height="150"/>
-                                <color key="backgroundColor" red="0.93333333333333335" green="0.44705882352941179" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5o9-UK-i9V" secondAttribute="height" multiplier="1:1" id="mNc-dn-YSw"/>
                                 </constraints>
@@ -493,6 +469,33 @@
                                 </variation>
                                 <connections>
                                     <action selector="eightPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rmN-IK-XaV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLk-Lx-Dby">
+                                <rect key="frame" x="300" y="450" width="150" height="150"/>
+                                <color key="backgroundColor" red="0.792156862745098" green="0.79607843137254897" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jLk-Lx-Dby" secondAttribute="height" multiplier="1:1" id="I41-FO-Bew"/>
+                                    <constraint firstAttribute="width" secondItem="jLk-Lx-Dby" secondAttribute="height" multiplier="1:1" id="TL6-r7-dLA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="47"/>
+                                <state key="normal" title="7">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="I41-FO-Bew"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="41"/>
+                                    <mask key="constraints">
+                                        <include reference="I41-FO-Bew"/>
+                                        <exclude reference="TL6-r7-dLA"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="sevenPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WCQ-ls-NrM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -621,7 +624,6 @@
                                 <exclude reference="UKN-r5-8qy"/>
                                 <exclude reference="xVn-mB-avL"/>
                                 <exclude reference="53Z-A4-R47"/>
-                                <exclude reference="jLk-Lx-Dby"/>
                                 <exclude reference="kgg-96-Wfy"/>
                                 <exclude reference="9If-Tn-C9U"/>
                                 <exclude reference="fC3-KM-bSv"/>
@@ -632,6 +634,7 @@
                                 <exclude reference="G7F-Bg-v1y"/>
                                 <exclude reference="Zjk-5T-PcE"/>
                                 <exclude reference="Mkr-Lt-ui4"/>
+                                <exclude reference="jLk-Lx-Dby"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="jGA-HI-Oa4"/>
@@ -741,7 +744,6 @@
                                 <include reference="UKN-r5-8qy"/>
                                 <include reference="xVn-mB-avL"/>
                                 <include reference="53Z-A4-R47"/>
-                                <include reference="jLk-Lx-Dby"/>
                                 <include reference="kgg-96-Wfy"/>
                                 <include reference="9If-Tn-C9U"/>
                                 <include reference="fC3-KM-bSv"/>
@@ -752,6 +754,7 @@
                                 <include reference="G7F-Bg-v1y"/>
                                 <include reference="Zjk-5T-PcE"/>
                                 <include reference="Mkr-Lt-ui4"/>
+                                <include reference="jLk-Lx-Dby"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="jGA-HI-Oa4"/>
@@ -873,6 +876,7 @@
                         <outletCollection property="numberButtons" destination="xVn-mB-avL" collectionClass="NSMutableArray" id="IFk-Mc-llf"/>
                         <outletCollection property="numberButtons" destination="jLk-Lx-Dby" collectionClass="NSMutableArray" id="ef2-rJ-MaV"/>
                         <outletCollection property="numberButtons" destination="kgg-96-Wfy" collectionClass="NSMutableArray" id="uA0-K4-mhc"/>
+                        <outletCollection property="numberButtons" destination="Mkr-Lt-ui4" collectionClass="NSMutableArray" id="pXW-eQ-ND8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
