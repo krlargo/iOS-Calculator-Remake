@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum Operation {
+enum Operator {
   case none
   case division
   case multiplication
@@ -20,15 +20,14 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var displayLabel: UILabel!
   
-  var totalValue = CGFloat(0); //holds entire equation
+  var currentOperator = Operator.none;
+  var totalValue = CGFloat(0); //holds long running result
   var displayValue = CGFloat(0); //value currently being displayed
-  var secondTermValue = CGFloat(0); //holds values for current terms
-  var currentOperation = Operation.none;
+  var decimalPlace = CGFloat(1); //the decimal location where the next decimal should be placed
   var decimalPressed = false;
-  var decimalPlace = CGFloat(1);
-  var evaluated = false; //if current display is evaluated
   var beginNewTerm = false;
-
+  var totalValueSet = false;
+  var displayValueIsNegative = false;
 
   @IBOutlet weak var allClearButton: UIButton!
   @IBOutlet weak var positiveNegativeButton: UIButton!
@@ -43,10 +42,16 @@ class ViewController: UIViewController {
   @IBOutlet weak var addButton: UIButton!
   @IBOutlet weak var equalsButton: UIButton!
   
+  @IBOutlet var allButtons: [UIButton]!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //add borders
+    for i in 0 ..< allButtons.count {
+      allButtons[i].layer.borderWidth = 0.25;
+    }
   }
 
   override func didReceiveMemoryWarning() {
@@ -54,11 +59,19 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
+  
   func updateDisplay() {
-    if(decimalPressed) { //display value as is
-      displayLabel.text = String(displayValue);
-    } else { //display value as integer (no decimal)
+
+    //add to account for scientific notation & correct number of digits
+    if(!inputHasDecimal()) { //if is an integer
       displayLabel.text = String(Int(displayValue));
+    } else { //not an integer
+      displayLabel.text = String(displayValue); //direct float to string conversion
+    }
+    
+    //append negative sign
+    if(displayValueIsNegative) {
+      displayLabel.text = "-" + displayLabel.text!;
     }
   }
   
@@ -67,8 +80,11 @@ class ViewController: UIViewController {
   }
   
   func processDigit(x: CGFloat) {
-    if(displayValue * 10 > 999999999) { //if next inputted integer breaks max
-      return; //don't process anymore digits
+    
+    //don't process any numbers greater than 9 digits
+    if((inputHasDecimal() && String(displayValue).characters.count > 9) || //no decimal && more than 9 chars
+       (!inputHasDecimal() && String(displayValue).characters.count > 10)) { //decimal && more than 10 chars
+        return;
     }
     
     //if inputting term after operation button was tapped
@@ -86,9 +102,11 @@ class ViewController: UIViewController {
       displayValue += x;
     }
     
-    secondTermValue = displayValue;
-    
     updateDisplay();
+  }
+  
+  func inputHasDecimal() -> Bool {
+    return ceil(displayValue) != displayValue;
   }
   
   @IBAction func zeroPressed(sender: AnyObject) {
@@ -149,46 +167,70 @@ class ViewController: UIViewController {
   }
 
   @IBAction func allClearPressed(sender: AnyObject) {
-    currentOperation = Operation.none;
-    displayValue = 0;
-    secondTermValue = 0;
-    decimalPressed = false;
-    decimalPlace = 1;
+    currentOperator = Operator.none;
+    totalValue = CGFloat(0); //holds entire equation
+    totalValueSet = false;
+    
+    resetForNewTerm();
+    
     updateDisplay();
   }
   
+  //called before we enter a new term after an operator is tapped;
+  // resets everything except for operator and total values
   func resetForNewTerm() {
-    displayValue = 0; //value itself is reset, not on screen label text
-//    secondTermValue = 0;
+    displayValue = CGFloat(0); //value currently being displayed
+    decimalPlace = CGFloat(1);
     decimalPressed = false;
-    decimalPlace = 1;
     beginNewTerm = true;
+    displayValueIsNegative = false;
   }
   
-  var lastPressed = Operation.none;
-  
-  func setOperation(op: Operation) {
-    
-    currentOperation = op;
-    totalValue = displayValue; //whatever is displayed is new total
+  @IBAction func positiveNegativePressed(sender: AnyObject) {
+    displayValueIsNegative = (displayValueIsNegative) ? false : true;
+    updateDisplay();
+  }
 
-    resetForNewTerm(); //reset for next input
+  
+  @IBAction func percentagePressed(sender: AnyObject) {
+    displayValue /= 100;
+    updateDisplay();
+  }
+  
+  //called when an operator button is tapped
+  func setOperator(op: Operator) {
+    
+    currentOperator = op;
+    
+    //the first time any operator is tapped, save current value as total value
+    if(!totalValueSet) {
+      
+      //check if first term is negative
+      if(displayValueIsNegative) {
+        displayValue *= -1;
+      }
+      
+      totalValue = displayValue; //whatever is displayed is new total
+      totalValueSet = true;
+    }
+    
+    resetForNewTerm();
   }
   
   @IBAction func divisionPressed(sender: AnyObject) {
-    setOperation(Operation.division);
+    setOperator(Operator.division);
   }
   
   @IBAction func multiplicationPressed(sender: AnyObject) {
-    setOperation(Operation.multiplication);
+    setOperator(Operator.multiplication);
   }
   
   @IBAction func subtractionPressed(sender: AnyObject) {
-    setOperation(Operation.subtraction);
+    setOperator(Operator.subtraction);
   }
   
   @IBAction func additionPressed(sender: AnyObject) {
-    setOperation(Operation.addition);
+    setOperator(Operator.addition);
   }
   
   @IBAction func evaluatePressed(sender: AnyObject) {
@@ -196,31 +238,38 @@ class ViewController: UIViewController {
   }
   
   func evaluate() {
-    switch (currentOperation) {
-    case Operation.division:
-      totalValue /= secondTermValue;
+    
+    //check if second term is negative
+    if(displayValueIsNegative) {
+      displayValue *= -1;
+      displayValueIsNegative = false; //reset
+    }
+    
+    switch (currentOperator) {
+    case Operator.division:
+      totalValue /= displayValue;
       break;
       
-    case Operation.multiplication:
-      totalValue *= secondTermValue;
+    case Operator.multiplication:
+      totalValue *= displayValue;
       break;
       
-    case Operation.subtraction:
-      totalValue -= secondTermValue;
+    case Operator.subtraction:
+      totalValue -= displayValue;
       break;
       
-    case Operation.addition:
-      totalValue += secondTermValue;
+    case Operator.addition:
+      totalValue += displayValue;
       break;
       
     default:
       return;
     }
     
+    //store and display evaluated value
     displayValue = totalValue;
     updateDisplay();
     
-    currentOperation = Operation.none;
-    evaluated = true;
+    currentOperator = Operator.none;
   }
 }
