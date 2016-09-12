@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		536897BF1D865E580024FE39 /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536897BE1D865E580024FE39 /* CalculatorModel.swift */; };
 		53703DCB1D813F7D009B00D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53703DCA1D813F7D009B00D1 /* AppDelegate.swift */; };
 		53703DCD1D813F7D009B00D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53703DCC1D813F7D009B00D1 /* ViewController.swift */; };
 		53703DD01D813F7D009B00D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53703DCE1D813F7D009B00D1 /* Main.storyboard */; };
@@ -14,6 +15,9 @@
 		53703DD51D813F7D009B00D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53703DD31D813F7D009B00D1 /* LaunchScreen.storyboard */; };
 		53703DE01D813F7D009B00D1 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53703DDF1D813F7D009B00D1 /* CalculatorTests.swift */; };
 		53703DEB1D813F7D009B00D1 /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53703DEA1D813F7D009B00D1 /* CalculatorUITests.swift */; };
+		53703DFD1D829AC5009B00D1 /* SanFranciscoFont-master in Resources */ = {isa = PBXBuildFile; fileRef = 53703DFC1D829AC5009B00D1 /* SanFranciscoFont-master */; };
+		53A148471D846E5D0025615B /* SanFranciscoFont-master in Resources */ = {isa = PBXBuildFile; fileRef = 53703DFC1D829AC5009B00D1 /* SanFranciscoFont-master */; };
+		53A148481D846E5D0025615B /* SanFranciscoFont-master in Resources */ = {isa = PBXBuildFile; fileRef = 53703DFC1D829AC5009B00D1 /* SanFranciscoFont-master */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		536897BE1D865E580024FE39 /* CalculatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 		53703DC71D813F7C009B00D1 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53703DCA1D813F7D009B00D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53703DCC1D813F7D009B00D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 		53703DE61D813F7D009B00D1 /* CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53703DEA1D813F7D009B00D1 /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
 		53703DEC1D813F7D009B00D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53703DFC1D829AC5009B00D1 /* SanFranciscoFont-master */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "SanFranciscoFont-master"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 		53703DBE1D813F7C009B00D1 = {
 			isa = PBXGroup;
 			children = (
+				53703DFB1D8296DC009B00D1 /* Supporting Files */,
 				53703DC91D813F7D009B00D1 /* Calculator */,
 				53703DDE1D813F7D009B00D1 /* CalculatorTests */,
 				53703DE91D813F7D009B00D1 /* CalculatorUITests */,
@@ -99,6 +106,7 @@
 			children = (
 				53703DCA1D813F7D009B00D1 /* AppDelegate.swift */,
 				53703DCC1D813F7D009B00D1 /* ViewController.swift */,
+				536897BE1D865E580024FE39 /* CalculatorModel.swift */,
 				53703DCE1D813F7D009B00D1 /* Main.storyboard */,
 				53703DD11D813F7D009B00D1 /* Assets.xcassets */,
 				53703DD31D813F7D009B00D1 /* LaunchScreen.storyboard */,
@@ -123,6 +131,14 @@
 				53703DEC1D813F7D009B00D1 /* Info.plist */,
 			);
 			path = CalculatorUITests;
+			sourceTree = "<group>";
+		};
+		53703DFB1D8296DC009B00D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				53703DFC1D829AC5009B00D1 /* SanFranciscoFont-master */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53703DD51D813F7D009B00D1 /* LaunchScreen.storyboard in Resources */,
+				53703DFD1D829AC5009B00D1 /* SanFranciscoFont-master in Resources */,
 				53703DD21D813F7D009B00D1 /* Assets.xcassets in Resources */,
 				53703DD01D813F7D009B00D1 /* Main.storyboard in Resources */,
 			);
@@ -242,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A148471D846E5D0025615B /* SanFranciscoFont-master in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A148481D846E5D0025615B /* SanFranciscoFont-master in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				536897BF1D865E580024FE39 /* CalculatorModel.swift in Sources */,
 				53703DCD1D813F7D009B00D1 /* ViewController.swift in Sources */,
 				53703DCB1D813F7D009B00D1 /* AppDelegate.swift in Sources */,
 			);
