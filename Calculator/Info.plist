@@ -28,7 +28,8 @@
 	<string>Main</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SanFranciscoDisplay-Ultralight</string>
+		<string>SanFranciscoDisplay-Ultralight.otf</string>
+		<string>San Francisco Display</string>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

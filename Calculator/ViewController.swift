@@ -20,11 +20,11 @@ class ViewController: UIViewController {
   
   var calculator = CalculatorModel();
   
-  @IBOutlet weak var displayLabel: UILabel!
+  @IBOutlet weak var displayLabel: UILabel! //calculator display
   
-  @IBOutlet var allButtons: [UIButton]!
-  @IBOutlet var operatorButtons: [UIButton]!
-  @IBOutlet weak var zeroButton: UIButton!
+  @IBOutlet var allButtons: [UIButton]! //used to add borders
+  @IBOutlet var operatorButtons: [UIButton]! //used for highlighting borders
+  @IBOutlet weak var zeroButton: UIButton! //used to left-align "0" on its button
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -35,7 +35,8 @@ class ViewController: UIViewController {
       allButtons[i].layer.borderWidth = 0.25;
     }
     
-    zeroButton.titleLabel?.textAlignment = NSTextAlignment.Left;
+    //provide right inset to shift 0 over to the left by a fourth of the screen size
+    zeroButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, view.frame.size.width/4)
   }
 
   override func didReceiveMemoryWarning() {
